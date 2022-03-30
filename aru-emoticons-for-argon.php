@@ -5,7 +5,7 @@
  * Plugin Name: ARU EMOTICONS for Argon
  * Plugin URI: https://github.com/OriLight152/ARU-EMOTICONS-for-Argon
  * Description: 为 Argon 主题添加aru表情包
- * Version:     1.1
+ * Version:     1.2
  * Author:      OriLight
  * Author URI:  https://orilight.top/
  * Text Domain: aru-emoticons-for-argon
@@ -30,12 +30,11 @@ function aru_options(){
         echo '<div class="updated"><p>设置已更新</p></div>';
     }
     $CStickersCDN = get_option('aru_options_cdn');
-    echo 'ARU EMOTICONS for Argon';
-    echo '<h2>基本设置</h2>';
-    echo '<h3>CDN设置</h3>';
+    echo '<h1>ARU EMOTICONS for Argon</h1>';
+    echo '<h2>CDN设置</h2>';
     echo '<p>[local] - 从本地加载表情资源</p>';
     echo '<p>[jsDelivr] - 从jsDelivr加载表情资源</p>';
-    echo '<p>也可直接填写CDN地址，如 https://p4.amarea.cn/public/ (需带/)</p>';
+    echo '<p>也可直接填写CDN地址，如 https://static.amarea.cn/ (需带/)</p>';
     echo '<form action="" method="post" id="aru_stickers_cdn_form">';
     echo '<p><input type="text" id="aru_stickers_cdn" name="aru_stickers_cdn" value="' . $CStickersCDN . '" /></p>';
     echo '<p><input type="submit" name="submit" value="保存设置" /></p>';
@@ -50,7 +49,7 @@ function add_aru_emoticons($emotionList){
 
     $SLocal = plugin_dir_path(__FILE__);
     $SjsDelivr = 'https://cdn.jsdelivr.net/gh/OriLight152/ARU-EMOTICONS-for-Argon/';
-    $SDefault = 'https://p4.amarea.cn/public/';
+    $SDefault = 'https://static.amarea.cn/';
 
     switch (get_option('aru_options_cdn')) {
         case '[local]':
